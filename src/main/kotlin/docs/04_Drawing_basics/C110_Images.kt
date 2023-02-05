@@ -19,13 +19,13 @@ fun main() {
 
     @Text
     """
-    # Images
+    # 이미지
 
-    Images are stored in `ColorBuffer` instances, the image data resides in GPU memory
+    이미지는 `ColorBuffer` 인스턴스에 저장되는데, 이 데이터는 GPU메모리에 위치합니다.y
 
-    ## Loading and drawing images
+    ## 이미지를 불러와 그리기
 
-    Images are loaded using the `loadImage` function and drawn using `Drawer.image`.
+    이미지는 `loadImage` 함수를 이용하여 불러오고, `Drawer.image`를 사용해 그려집니다.
     """
 
     @Media.Image "../media/image-001.jpg"
@@ -46,7 +46,7 @@ fun main() {
 
     @Text
     """
-    To change the location of the image one can use `Drawer.image` with extra coordinates provided.
+    이미지의 위치를 변경하고 싶다면, `Drawer.image`에 좌표를 추가하면 됩니다.
     """
 
     run {
@@ -65,7 +65,7 @@ fun main() {
 
     @Text
     """
-    Extra `width` and `height` arguments can be provided to draw a scaled version of the image
+    `width`, `height` 인자를 추가하여 그려지는 이미지의 크기를 지정할 수 있습니다.
     """
 
     run {
@@ -84,10 +84,10 @@ fun main() {
 
     @Text
     """
-    ## Drawing parts of images
+    ## 이미지의 일부분을 그리기
     
-    It is possible to draw parts of images by specifying _source_ and _target_ rectangles. The source rectangle describes
-    the area that should be taken from the image and presented in the target rectangle.
+    _source_, _target_ 사각형을 지정하여 이미지의 부분을 그려낼 수도 있습니다.
+    source 사각형은 원본의 이미지에서 얻어올 영역을, target 사각형은 그려질 영역을 의미합니다.
     """
 
     @Media.Image "../media/image-002.jpg"
@@ -110,7 +110,7 @@ fun main() {
 
     @Text
     """
-    ## Drawing many parts of images
+    ## 이미지의 여러 부분을 그리기 
     """
 
     @Media.Image "../media/image-003.jpg"
@@ -147,13 +147,14 @@ fun main() {
 
     @Text
     """
-    ## Changing the appearance of images
+    ## 이미지의 외형 변경하기 
+
+    선형적 컬러변환은 `Drawer.drawStyle.colorMatrix`를 `Matrix55` 로 변경하여 적용할 수 있습니다.
     
-    A linear color transform can be applied to images by setting `Drawer.drawStyle.colorMatrix` to a `Matrix55` value.
-    
-    ### Tinting
+    ### 틴팅 (Tinting)
     
     Tinting multiplies the image color with a _tint color_.
+    틴팅은 _tint color_를 이미지에 'multiply` 합니다.
     """
 
     @Media.Image "../media/image-004.jpg"
@@ -174,9 +175,9 @@ fun main() {
 
     @Text 
     """
-    ### Inverting
+    ### 반전
     
-    Drawing an image with inverted colors can be achieved by using the `invert` color matrix.
+    `inver` 컬러 매트릭스를 사용하여 이미지의 색을 반전시킬 수 있습니다.
     """
 
     @Media.Image "../media/image-005.jpg"
@@ -197,9 +198,10 @@ fun main() {
 
     @Text
     """
-    ### Grayscale
+    ### 그레이스케일
     
-    Drawing an image with inverted colors can be achieved by using the `grayscale` color matrix.
+    `grayscale` 컬러 매트릭스를 사용하여 이미지를 그레이스케일 화 할 수 있습니다.
+
     """
 
     @Media.Image "../media/image-006.jpg"
@@ -222,11 +224,10 @@ fun main() {
 
     @Text
     """
-    ### Concatenating color transforms
+    ### 컬러변환 연결시키기 
     
-    Color transforms can be combined using the multiplication operator. This is called transform concatenation.
-    Keep in mind that transform concatenations are read from right to left, and in the following example we first
-    apply the `grayscale` transform and then the `tint` transform.
+    컬러 변환은 곱 연산자(multiplication operator)를 사용하여 조합할 수 있습니다. 이것을 변환 연결(transform concatenation) 이라고 합니다.
+    변환 연결은 우측에서 좌측으로 읽어야 함을 기억해주시기 바랍니다. 아래의 예제는 먼저 `grayscale` 변환을 한 뒤 `tint`변환을 하는 예제입니다.
     """
 
     @Media.Image "../media/image-007.jpg"

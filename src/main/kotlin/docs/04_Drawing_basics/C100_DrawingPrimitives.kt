@@ -15,14 +15,14 @@ import org.openrndr.math.Vector2
 fun main() {
     @Text 
     """
-    # Drawing Primitives
+    # 기초도형 그리기
     
-    In this topic we introduce OPENRNDR's basic drawing primitives. We show how to draw lines, rectangles and circles.
+    OPENRNDR의 기초도형을 그리는 방법을 다뤄봅니다. 여기서는 선, 사각형, 삼각형, 원을 그리는 법을 알아볼 것입니다.
 
-    ## Drawing circles
+    ## 원 그리기
     
-    A circle is drawn around coordinates `x`, `y`, i.e. `x` and `y` specify the center of the circle.
-    Circles are filled with the color set in `Drawer.fill` and their stroke is set to `Drawer.stroke`. The width of the stroke follows `Drawer.strokeWeight`.
+    원은 원의 중심을 나타내는 `x`, `y` 좌표를 중심으로 그려집니다.\
+    원은 `Drawer.fill`에 지정된 색으로 채워지며, `Drawer.stroke`에 지정된 색으로 선이 그려집니다. 선의 굵기는 `Drawer.strokeWeight`에 의해 지정됩니다.
     """
 
     @Media.Image "../media/circle-001.jpg"
@@ -68,7 +68,10 @@ fun main() {
 
     @Text 
     """
-    You may have spotted the two other APIs for drawing circles; `Drawer.circle(center: Vector2, radius: Double)` and `Drawer.circle(circle: Circle)` and wonder what those are for. They are for drawing the exact same circle, but using arguments that may be more convenient in scenarios in which values are provided by `Vector2` or `Circle` types.
+    원을 그리기 위해 또다른 API들이 사용됨을 볼 수 있습니다.
+    `Drawer.circle(center: Vector2, radius: Double)`과 `Drawer.circle(circle: Circle)`인데요. 
+    이들은 `Vector2` 혹은 `Circle` 타입으로 전달된 값들을 사용해 손쉽게 같은 원을 그려내는 문법을 사용합니다.
+   
     """
 
     run {
@@ -133,10 +136,11 @@ fun main() {
 
     @Text
     """
-    ## Drawing lines
-    Single lines are drawn per segment between two pairs of coordinates using `lineSegment`. Line primitives use `Drawer.stroke` to determine the color drawing color and `Drawer.strokeWeight` to determine the width of the line.
+    ## 선 그리기
+    선은 `lineSegment`를 사용한 두 좌표로 구성된 세그먼트로 하나가 그려집니다. 
+    `Drawer.stroke`로 선의 색을, `Drawer.strokeWEight`으로 선의 굵기를 지정하여 사용할 수 있습니다.
 
-    Line endings can be drawn in three styles by setting `Drawer.lineCap`
+    선의 끝모양은 `Drawer.lineCap`의 세가지 스타일를 사용할 수 있습니다.
 
     LineCap. | description
     ---------|------------
@@ -196,9 +200,9 @@ fun main() {
 
     @Text
     """
-    ### Drawing line strips
-    A run of connected line segments is called a line strip and is drawn using `lineStrip`.
-    To draw a line strip one supplies a list of points between which line segments should be drawn.
+    ### 선 스트립 그리기
+    연결된 선 세그먼트는 라인 스트립이라 불리우며 `linewStrip`을 사용하여 그릴 수 있습니다.
+    라인 스트립을 그리기 위해서는 점들의 리스트가 사용됩니다.
     """
 
     @Media.Image "../media/line-002.jpg"
