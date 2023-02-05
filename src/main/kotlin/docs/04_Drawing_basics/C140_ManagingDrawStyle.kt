@@ -14,12 +14,12 @@ import org.openrndr.draw.isolated
 fun main() {
     @Text 
     """
-    # Managing draw style
+    # 그리기 스타일의 관리
     
-    In the previous section we briefly talked about controlling the appearance of drawing primitives, in this section we draw styles and tools to
-    manage the draw style.
+    이전 섹션까지는 기초도형의 모양을 제어하는 법을 살펴보았습니다.
+    이 섹션에서는 그리기 스타일과 그리기 스타일을 관리하는 도구들을 살펴봅니다.
     
-    #### Full overview of properties of DrawStyle
+    #### (그리기) 스타일의 모든 요소
     
     Property             | Type             | Default            | Description
     ---------------------|------------------|--------------------|-------------------
@@ -41,15 +41,15 @@ fun main() {
     `backStencil`        | `StencilStyle`   |                    | The stencil style for back-facing fragments
     `clip`               | `Rectangle?`     | `null`             | A rectangle that describes where drawing will take place
     
-    ## The active draw style
+    ## 활성화된 그리기 스타일 
     
     ```kotlin
     val active = drawer.drawStyle.copy()
     ```
     
-    ## The draw style stack
+    ## 스타일 스택 
     
-    Styles can be pushed on and popped from a stack maintained by `Drawer`.
+    스타일은 `Drawer`에 의해 스택의 구조로 push되거나 pop될 수 잇습니다.
     
     """
 
@@ -67,8 +67,7 @@ fun main() {
 
     @Text 
     """
-    The `Drawer` provides a helper function called `isolated {}` that pushes style and transforms on a their respective
-    stacks, executes the user code and pops style and transforms back.
+    `Drawer`는 `isolated {}`라 불리우는 헬퍼 함수를 제공합니다. 이 함수를 사용하여 스타일(style)과 좌표계(transform)를 스택에 push 하여 사용자 코드를 실행하고, 그 뒤 pop을 하여 스타일과 좌표계 되돌립니다.
     """
 
     application {

@@ -15,16 +15,15 @@ fun main() {
 
     @Text 
     """
-    # Color
+    # 컬러
 
-    In this chapter we discuss and demonstrate OPENRNDR's color functionality.
+    이 챕터에서는 OPENRNDR의 컬러 기능에 대해 다뤄봅니다.
+    ## 기본 컬러
 
-    ## Basic color
+    OPENRNDR은 기본적으로 red-green-blud(-alpha)를 사용하여 `ColorRGBa` 인스턴스에 저장합니다.
+    `ColorRGBa`의 각 채널은 [0, 1]의 범위를 갖습니다.
 
-    OPENRNDR primarily uses red-green-blue(-alpha) color stored in 
-    `ColorRGBa` instances. `ColorRGBa`'s channels store values in the range [0, 1].
-
-    ### Predefined colors
+    ### 미리 지정된 컬러들 
     """
 
     @Code.Block
@@ -40,11 +39,10 @@ fun main() {
     }
 
     @Text """
-    ### Custom colors
+    ### 커스텀 컬러
 
-    Custom colors can be made using either the 
-    ColorRGBa constructor, or the `rgb` and `rgba` 
-    functions. Both use value ranges between 0.0 and 1.0.
+    커스텀 컬러는 ColorRGBa 생성자를 이용할수도 있지만, `rgb`, `rgba` 함수를 사용할 수도 있습니다.
+    두 함수 모두 0.0에서 1.0사이의 값을 갖습니다.
     """
 
     @Code.Block
@@ -62,11 +60,9 @@ fun main() {
 
     @Text 
     """
-    ### Conversion from hex color
+    ### hex 컬러에서 변환 
     
-    RGB color is commonly communicated in hexadecimal 
-    codes. `ColorRGBa` provides simple tools to construct 
-    color from such hexadecimal codes.
+    RGB 컬러는 일반적으로 16진수(HEX)로 사용됩니다. `ColorRGBa`에는 손쉽게 HEX 코드에서 컬러를 생성하는 방법을 제공합니다.
     """
     @Code.Block
     run {
@@ -78,11 +74,10 @@ fun main() {
 
     @Text 
     """
-    ### Color operations
+    ### 컬러 연산
 
-    The `ColorRGBa` class offers a number of tools to 
-    create variations of colors. For example `ColorRGBa.shade` can be
-    used to create lighter or darker shades of a base color.
+    `ColorRGBa` 클래스는 컬러의 다양한 변형을 생성하는 여러 방법을 제공합니다.
+    `ColorRGBa.shade`을 사용하면 원래 생보다 좀 더 밝거나, 좀더 어두운 색을 만들수 있습니다.
     """
 
 
@@ -117,7 +112,7 @@ fun main() {
 
     @Text 
     """
-    Using `ColorRGBa.opacify` colors can be made more or less opaque.
+    `ColorRGBa.opacify`를 사용하면, 투명도를 조절할 수 있습니다.
     """
 
     @Media.Image "../media/color-002.jpg"
@@ -150,7 +145,7 @@ fun main() {
 
     @Text 
     """
-    Using `mix(ColorRGBa, ColorRGBa, Double)` colors can be mixed.
+    `mix(ColorRGBa, ColorRGBa, Double)`를 사용하여 색을 섞을 수 있습니다.
     """
 
 
@@ -182,10 +177,9 @@ fun main() {
 
     @Text 
     """
-    ## Alternative color models
+    ## 대체 컬러 모델
     
-    OPENRNDR offers a wide range of alternative color models. The alternative models use primaries different from red, green
-    and blue.
+    OPENRNDR은 다양한 대체 컬러 모델을 제공하고 있습니다. 데체 모델들은 RGB와 다른 원색을 사용합니다.
     
     Class name    | Color space description
     --------------|---------------------------------------
@@ -204,17 +198,16 @@ fun main() {
     `ColorLSHUVa` | LSHuv colorspace, a cylindrical variant of LUV, chroma replaced with normalized saturation
     `ColorATVa`   | Coloroid color space, partial implementation
     
-    ## HSV, HSL, XSV and XSL color
+    ## HSV, HSL, XSV 그리고 XSL 컬러
     
-    HSV (hue-saturation-value) and HSL ("hue-saturation-lightness") are cylindrical color spaces.
+    HSV ("hue-saturation-value") 와 HSL ("hue-saturation-lightness") 는 원통형 색상공간(cylindrical color spaces)입니다/
+
+    XSV와 XSV(더 나은 이름이 없어서)는 HSV와 HSL의 변형된 버전으로, 아티스트들이 사용하기 적합하도록 hue 속성을 늘리거나 압축한 색공간입니다.
+    이 색공간이 예술가에게 적합한 이유는 red-green과 blue-yellow 원색을 갖고 있기 떄문입니다. XSV와 XSL 색공간은 Adobe의 Kuler 색공간을 기반으로 하고 있습니다.
     
-    XSV and XSL (for lack of a better name) are transformed versions of HSV and HSL in which the hue component has been
-    stretched and compressed to make the color space better suited for artists. The spaces are better suited for artists
-    because it has red-green and blue-yellow primaries. The XSV and XSL spaces are based on (if not
-    the same as) the Adobe Kuler color spaces.
-    
-    Below is an example of plots of color swatches for (from top to bottom) HSV, HSL, XSV and XSL. The adjusted hue of the
-    XSV and XSL spaces is clearly visible.
+    아래는 각 색공간의 컬러 팔레트입니다. 
+    (위에서 아래로) HSV, HSL, XSV, XSL.
+    XSV와 XSL의 hue가 확연하게 다름을 볼 수 있습니다.
     """
 
     @Media.Image "../media/color-004.jpg"
