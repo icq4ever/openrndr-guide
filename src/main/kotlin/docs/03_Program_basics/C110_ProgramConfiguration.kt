@@ -16,31 +16,31 @@ fun main() {
 
     @Text
     """
-    # Program Configuration
+    # 프로그램 설정
     
-    Starting your program with a custom configuration looks roughly like this.
+    커스텀 설정을 갖는 프로그램은 대충 이와 같습니다.
     """
 
     @Code
     application {
         configure {
 
-            // settings go here
+            // 세팅이 여기에 작성됨
         }
         program {
-            // -- one time set up code goes here
+            // -- 한번만 실행되는 셋업코드가 여기에 작성됨
             extend {
 
-                // -- drawing code goes here
+                // -- 드로잉 코드들이 이곳에 작성됨
             }
         }
     }
 
     @Text
     """
-    ## Window size
+    ## 윈도우 크기
     
-    Setting the window size is done through the `width` and `height` properties.
+    윈도우 크기를 셋업하려면 `width`와 `height` 프로퍼티를 사용합니다.
     """
 
     @Code
@@ -53,10 +53,9 @@ fun main() {
 
     @Text
     """
-    ## Window position
+    ## 윈도우 위치
     
-    The default value for `position` is `null` for which the default behaviour 
-    is to place the window at the center of the primary display
+    `position`의 기본값은 `null`입니다. 이는 메인 디스플레이의 중앙을 의미합니다.
     """
 
     @Code
@@ -68,9 +67,9 @@ fun main() {
 
     @Text
     """
-    ## Fullscreen window
+    ## 전체화면
 
-    Setting the window size is done through the `width` and `height` properties.
+    윈도우 크기를 셋업하려면 `width`와 `height` 프로퍼티를 사용합니다.
 
     """
 
@@ -98,7 +97,8 @@ fun main() {
 
     @Text
     """
-    # Window Title
+   
+    # 윈도우 타이틀
     """
 
     @Code
@@ -110,11 +110,12 @@ fun main() {
 
     @Text 
     """
-    # Window unfocus behaviour
     
-    Two window unfocus behaviours are available. In `NORMAL` behaviour the 
-    program continues running at full speed, in contrast the `THROTTLE` 
-    behaviour throttles the program to 10Hz.
+    # 비활성화된 윈도우 동작
+    
+    비활성 상태일때 두가지 모드를 사용할 수 있습니다.
+    `NORMAL`모드에서 프로그램은 최대 속도로 실행합니다. 
+    반대로 `THROTTLE`에서는 10Hz의 속도로 쓰로틀링됩니다.
     """
 
     @Code
