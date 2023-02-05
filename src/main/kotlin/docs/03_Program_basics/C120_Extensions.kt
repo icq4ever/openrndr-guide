@@ -81,13 +81,14 @@ fun main() {
 
     @Text 
     """
-    ## Built-in and contributed extensions
+    ## 빌트인 기여 익스텐션 
     
-    OPENRNDR provides a few built-in extensions to simplify common tasks. One is `Screenshots`, which is used
-    to create screenshots of your programs. Another is `ScreenRecorder` which is used to write videos to files.
+    OPENRNDR은 일반적인 수행을 위한 빌트인 익스텐션을 제공합니다. 
+    `Screenshots`는 프로그램의 스크린샷을 생성하는데 사용됩니다. 
+    `ScreenRecorder`는 비디오 파일로 화면을 캡쳐하여 저장하는데 사용됩니다.
 
-    Next to the built-in extensions there is [ORX](https://github.com/openrndr/orx), an extensive repository of provided and
-    contributed OPENRNDR extensions and add-ons. If you work from `openrndr-template` you can easily add and remove extensions 
-    from your project by editing the `orxFeatures` property in `build.gradle.kts`.
+    빌트인 익스텐션 외에는 [ORX](https://github.com/openrndr/orx)가 있습니다. ORX는 OPENRNDS의 추가 기능을 제공합니다.
+    `openrndr-template`을 사용하면, `build.gradle./kts`의 `orxFeatures` 프로퍼티 속성을 수정하여 손쉽게 프로젝트에 익스텐션을 추가하거나 삭제할 수 있습니다.
+    
     """
 }
