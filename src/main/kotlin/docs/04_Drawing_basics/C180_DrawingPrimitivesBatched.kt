@@ -21,28 +21,20 @@ import org.openrndr.shape.Rectangle
 fun main() {
     @Text 
     """
-    # Drawing primitives batched
+    # 일괄적으로 기초도영 한번에 그리기
 
-    OPENRNDR provides special draw APIs for drawing many circles, rectangles or 
-    points at once by doing something called "batching".
+    OPENRNDR은 원, 사각형, 점 등 다양한 기초도형을 일괄적으로 한번에 그리는 "batching"이라고 하는 특별한 API를 제공합니다.
 
-    This technique performs much faster because the rendering 
-    time is tied to the number of calls we do on the GPU. It takes less 
-    time to send one large piece of data from CPU to GPU than sending many 
-    small pieces. Using this approach can be beneficial when drawing hundreds
-    or thousands of elements.
+    이 방법을 사용하면 렌더링 타임이 CPU에 요청하는 횟수에 묶여있기 때문에 훨씬 빠릅니다. 
+    CPU에서 GPU로 작은 데이터들을 여러번 전송하는것보다 큰 데이터를 한번에 전송하는 것이 훨씬 빠르기 떄문입니다.
+    이러한 방법을 사용하면 수백개 혹은 수천개의 요소들을 그려낼때 훨씬 효율적입니다.
     
-    ## Batched circles
+    ## 원 일괄적으로 한번에 그리기 
 
-    This example makes use of `Circle` (a class with properties like 
-    `center` and `radius` and some useful methods), not to be confused with 
-    `drawer.circle()` (a method that draws pixels on the screen). 
-     It is possible to construct a `Circle` by providing a `center` position 
-     and a `radius` but also with two or three `Vector2` points that are used 
-     for deriving the circumference of a `Circle`.
+    이 예제는 `Circle`(`center`나 `radius`와 같은 속성 및 여러 유용한 메소드들을 갖는 클래스)를 사용하는 것이므로, `drawer.circle()`(화면에 픽셀들을 그리는 메소드)와 혼동해서는 안됩니다.
+    `center` 위치와, `radius`를 사용하여 `Circle`을 생성하는것이 가능하지만, 대신에 `Circle`을 위한 두개 혹은 세개의 `Vector2` points들을 사용할수도 있습니다.
  
-    Calling `drawer.circles()` to draw a list of `Circle` is much faster than 
-    calling `drawer.circle()` multiple times.
+    `Circle`의 리스트를 그리기 위해 `drawer.circles()`를 호출하는것은 `drawer.circle()`을 여러번 호출하는것이 훨씬 빠릅니다.
     """
 
     @Media.Image "../media/batching-circles-001.jpg"
@@ -72,10 +64,9 @@ fun main() {
 
     @Text 
     """
-    `drawer.circles` has several signatures. One of them accepts a list of 
-    `Vector2` for the circle centers and a `Double` to specify the radius for 
-    all circles. This example draws 5000 circles on the screen leaving a 100.0 
-    pixel margin around the edges.
+    `drawer.circles`는 몇가지 함수 원형이 있습니다. 
+    그 중 하나는 받아모든 원에 대해 `Vector2`의 리스트를 중심좌표로, `Double`를 원의 지름으로 지정하는 것입니다.
+    이 예제는 화면에서 100.0 픽셀만큽의 여백을 두고 5000개의 원을 그려냅니다.
     """
 
     application {
@@ -91,8 +82,7 @@ fun main() {
 
     @Text 
     """
-    To have a unique radius per circle we can provide a list of Double as a
-    second argument:  
+    각 원마다 고유한 크기를 갖게 하려면, 두번째 인자로 Doblue 리스트를 넘겨주면 됩니다:
     """
 
     @Media.Image "../media/batching-circles-002.jpg"
@@ -113,9 +103,8 @@ fun main() {
 
     @Text 
     """
-    What about unique colors and `strokeWeight`s per circle? 
-    Creating static or dynamic batches makes it possible, 
-    both shown in the next example.          
+    각 원마다 `strokeWeight`과 색을 다르게 지정하고 싶다면요?
+    정적 혹은 동적 배치를 사용하면 가능합니다, 두 방법 모두 아래의 예제에서 살펴볼 수 있습니다:
     """
 
     @Media.Image "../media/batching-circles-003.jpg"
@@ -159,21 +148,20 @@ fun main() {
 
     @Text 
     """
-    ## Batched rectangles
+    ## 사각형 일괄로 한번에 그리기 
 
+    이 예제는 배치를 생성하기 위해  `RectangleBatchBuilder`의 `.rectangle()`메소드를 여러번 호출합니다.
+    두가지 방식으로 동작하는데, 첫번째는 흑백 사각형을 정적으로 배치 생성하는 것이고, 두번째는 동적으로 반투명한, 애니메이션 프레임이 있는 핑크색 사각형을 동적으로 배치 생성하는것입니다.
+    
     This example calls the `.rectangle()` method of 
     `RectangleBatchBuilder` multiple times to construct a batch.
     It does so in two different ways: first, to construct a static batch of 
     monochrome rectangles and second, to construct a dynamic batch of 
     translucent pink rectangles in each animation frame.
     
-    The `.rectangle()` method takes two arguments: a `Rectangle` object and
-    an optional rotation. `Rectangle`s can be constructed in different ways: 
-    with position, width and optional height or by 
-    using `Rectangle.fromCenter()`.
-      
-    Calling `drawer.rectangles()` to draw a rectangle batch is much faster 
-    than calling `drawer.rectangle()` multiple times.
+    `.rectangle()` 메소드는 두개의 인자를 갖습니다: `Rectangle` 오브젝트와 옵션 값인 회전값입니다. `Rectangle`들은 위치와 가로 및 옵션으로 세로크기의 방법 혹은 `Rectangle.fromCenter()`를 사용하여 생성될 수 있습니다.
+
+    `drawer.rectangles()`를 호출하여 사각형을 일괄로 그리는것이 `drawer.rectangle()`을 여러본 호출하는 것보다 훨씬 빠릅니다.
     """
 
     @Media.Image "../media/batching-rectangles-001.jpg"
@@ -217,12 +205,11 @@ fun main() {
 
     @Text 
     """
-    ## Batched points
+    ## 점 일괄로 그리기
     
-    Drawing batched points is similar to drawing batched circles 
-    and rectangles. In this case we use a `PointBatchBuilder` and its 
-    `.point()` method. Note that we can specify the color of each point by 
-    using `.fill`.
+    일괄로 점을 그리는것은 원 및 사각형을 일괄로 그려내는것과 비슷합니다.
+    여기서는 `PointbatchBuilder`와 그것의 `.point()`메소드를 사용합니다.
+    여기서 각 점을 `.fill`를 사용해 색을 다르게 하였습니다.
     """
 
     @Media.Image "../media/batching-points-001.jpg"
