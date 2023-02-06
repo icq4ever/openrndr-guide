@@ -13,15 +13,14 @@ import org.openrndr.extensions.Screenshots
 fun main() {
     @Text 
     """
-    # Extensions
+    # 익스텐션 (애드온)
 
-    Extensions add functionality to a Program. Extensions can be used to control how a program draws, setup keyboard and
-    mouse bindings and much more.
+    익스텐션은 프로그램에 기능을 추가해줍니다. 익스텐션은 키보드 셋업, 마우스 연결, 드로잉 제어, 외 다양한 것들을 할 수 있습니다.
 
-    ## Basic extension use
+    ## 긴단한 익스텐션 사용
     
-    Here we demonstrate how to use an OPENRNDR extension. The extension that we use is the `Screenshots` extension, which, when 
-    the space bar is pressed will capture the application window's contents and save it to a timestamped file.
+    아래에서는 OPENRNDR 익스텐션을 어떻게 사용하는지 보여줍니다.
+    사용할 익스텐션은 `Screenshots`입니다. 이 익스텐션은 스페이스바 키를 누를때마다 어플레케이션의 화면을 캡쳐해 타임스탬프를 파일명으로 하여 저장합니다.
     """
 
     @Code
@@ -38,9 +37,9 @@ fun main() {
 
     @Text 
     """
-    ## Extension configuration
+    ## 익스텐션 설정
     
-    Some extensions have configurable options. They can be set using the configuring `extend` function as follows:
+    몇몇 익스텐션은 설정할 수 있는 옵션이 있습니다. 아래의 예제에서처럼 `extend` 함수를 이용하여 셋업할 수 있습니다.
     """
 
     @Code
@@ -54,10 +53,11 @@ fun main() {
 
     @Text 
     """
-    ## Extension functions
+    ## 익스텐션 함수들 
     
-    The functional `extend` function allows one to use a single function as an extension. This is commonly used to
-    create a "draw loop".
+    `extend` 함수는 익스텐션으로써의 단일 함수로 사용할 수 있도록 해줍니다. 
+    이러한 기법은 사실 "draw loop"를 생성하는데 사용되기도 합니다.
+    
     """
 
     @Code
@@ -71,11 +71,11 @@ fun main() {
 
     @Text
     """
-    ## Extension order
+    ## 익스텐션의 순서
         
-    The order in which calls to the `extend(...)` method appear in the code matters. 
-    `Screenshots` and `ScreenRecorder` should usually be placed before other extensions; 
-    otherwise, the content of the produced images or video files may be unexpected.
+    `extend(...)` 메소드에 어떠한 순서로 호출을 하는지는 코드의 작성에 따라 달리집니다.
+    `Screenshot`과 `ScreenRecorder`은 다른 익스텐션 이전에 위치하여야 합니다. 
+    그렇게 하지 않으면, 이미지나 비디오의 결과가 예상과 달라질 것입니다.
 
     """
 
