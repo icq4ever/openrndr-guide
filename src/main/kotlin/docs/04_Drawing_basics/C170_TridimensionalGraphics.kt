@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Tridimensional graphics")
-@file:ParentTitle("Drawing basics")
+@file:Title("3차원 그래픽스")
+@file:ParentTitle("드로잉 기초")
 @file:Order("170")
 @file:URL("drawingBasics/tridimensionalGraphics")
 

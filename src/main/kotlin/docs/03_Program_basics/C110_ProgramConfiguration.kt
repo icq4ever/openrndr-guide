@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION", "UNREACHABLE_CODE")
-@file:Title("Program configuration")
-@file:ParentTitle("Program basics")
+@file:Title("프로그램 설정")
+@file:ParentTitle("프로그램 기초")
 @file:Order("110")
 @file:URL("programBasics/programConfiguration")
 

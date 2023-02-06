@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Complex shapes")
-@file:ParentTitle("Drawing basics")
+@file:Title("복잡한 모양")
+@file:ParentTitle("드로잉 기초")
 @file:Order("150")
 @file:URL("drawingBasics/complexShapes")
 

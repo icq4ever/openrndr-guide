@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Managing draw style")
-@file:ParentTitle("Drawing basics")
+@file:Title("그리기 스타일 관리")
+@file:ParentTitle("드로잉 기초")
 @file:Order("140")
 @file:URL("drawingBasics/managingDrawStyle")
 

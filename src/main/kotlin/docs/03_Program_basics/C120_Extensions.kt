@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Extensions")
-@file:ParentTitle("Program basics")
+@file:Title("익스텐션")
+@file:ParentTitle("프로그램 기초")
 @file:Order("120")
 @file:URL("programBasics/extensions")
 

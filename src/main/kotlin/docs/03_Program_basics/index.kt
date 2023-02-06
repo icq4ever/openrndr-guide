@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Program basics")
+@file:Title("프로그램 기초")
 @file:Order("1030")
 @file:URL("programBasics/index")
 
@@ -10,7 +10,7 @@ import org.openrndr.dokgen.annotations.*
 fun main() {
     @Text
     """
-    # Program basics
+    # 프로그램 기초
     """.trimIndent()
 }
 

@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Drawing SVG")
-@file:ParentTitle("Drawing basics")
+@file:Title("SVG 그리기")
+@file:ParentTitle("드로잉 기초")
 @file:Order("160")
 @file:URL("drawingBasics/drawingSVG")
 

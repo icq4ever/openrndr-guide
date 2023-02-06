@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Drawing primitives batched")
+@file:Title("기초도형 배치 드로잉")
 @file:ParentTitle("Drawing basics")
 @file:Order("180")
 @file:URL("drawingBasics/drawingPrimitivesBatched")
@@ -21,7 +21,7 @@ import org.openrndr.shape.Rectangle
 fun main() {
     @Text 
     """
-    # 일괄적으로 기초도영 한번에 그리기
+    # 일괄적으로 기초도형 그리기
 
     OPENRNDR은 원, 사각형, 점 등 다양한 기초도형을 일괄적으로 한번에 그리는 "batching"이라고 하는 특별한 API를 제공합니다.
 

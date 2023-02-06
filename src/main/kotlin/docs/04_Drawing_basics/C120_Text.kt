@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Text")
-@file:ParentTitle("Drawing basics")
+@file:Title("텍스트")
+@file:ParentTitle("드로잉 기초")
 @file:Order("120")
 @file:URL("drawingBasics/text")
 
