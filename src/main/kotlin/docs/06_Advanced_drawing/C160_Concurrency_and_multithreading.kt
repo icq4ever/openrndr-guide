@@ -19,33 +19,26 @@ import kotlin.random.Random
 fun main() {
     @Text 
     """
-    # Concurrency and multi-threading
+    # 동시성과 멀티-스레딩
     
-    Here we talk about OPENRNDR's primitives for concurrency.
-    
-    The largest complication in multi-threading in OPENRNDR lies in how the 
-    underlying graphics API (OpenGL)
-    can only be used from threads on which an OpenGL context is active. 
-    This means that any interactions with `Drawer`,
-    `ColorBuffer`, `VertexBuffer`, `RenderTarget`, `Shader`, `BufferTexture`, 
-    `CubeMap`, `ArrayTexture` can only be 
-    performed on the primary draw thread or specially created draw threads. 
 
-    ## Coroutines
-    
-    Coroutines, as they are discussed here are a Kotlin specific framework for 
-    concurrency. Please read the 
-    [coroutines overview](https://kotlinlang.org/docs/reference/coroutines-overview.html) 
-    in the Kotlin reference for an introduction to coroutines
-    
-    `Program` comes with its own coroutine dispatcher, which guarantees that 
-    coroutines will be handled on the 
-    primary draw thread. This means that coroutines when executed or resumed 
-    by the program dispatcher will block the draw thread.
+    이제 OPENRNDR의 동시성을 위한 프리미티브에 대해 얘기해볼까 합니다.
 
-    In the following example we launch a coroutine that slowly counts to 99. 
-    Note that the delay inside the 
-    coroutine does _not_ block the primary draw thread.
+    OPENRNDR의 멀티스레딩에서 가장 큰 문제는 OpenGL 컨텍스트가 활성화된 스레드만 
+    graphics API(OpenGL)를 사용할 수 있다는 점입니다.
+    이는 `Drawer`, `ColorBuffer`, `VertexBuffer`, `RenderTarget`, `Shader`, `BufferTexture`, `CubeMap`, `ArrayTextuire`와의 
+    모든 상호작용은 기본 draw 스레드 혹은 특별하게 생성된 draw 스레드에서만 수행될 수 있다는 의미입니다.
+
+    ## 코루틴(Coroutines)
+    
+    여기서 얘기하는 코루틴은 동시성을 위한 코틀린(Kotlin) 전용 프레임워크 입니다. 
+    Kotlin 레퍼런스의 [coroutines overview](https://kotlinlang.org/docs/reference/coroutines-overview.html)를 읽어보세요.
+    
+    `Program`에는 코루틴이 기본 draw 스레드에서 처리되도록 보장하는 자체 코루틴 디스패처가 함께 제공됩니다.- 
+    이것은 프로그램 디스패처에 의해 실행되거나 재개될때 코루틴이 draw 스레드를 블로킹 한다는 것을 의미합니다.
+
+    아래의 예제에서는 99까지 천천히 카운트하는 코루틴을 실행합니다.
+    코루틴 내의 delay는 기본 draw 스레드를 블로킹 하지 *않습니다*.
     """
 
     @Code
@@ -68,6 +61,9 @@ fun main() {
 
     @Text 
     """
+    코루틴을 실행하는것이 메인 draw 스레드를 블로킹 한다면, 도대체 `Program` 디스패처의 목적이 뭔지 궁금할겁니다.
+    코루틴을 블로킹 하는것은 수행이 가벼울때에는 유용하다는것이 이에 대한 답변이 될 것입니다.
+
     You may be asking, what is the purpose of the `Program` dispatcher if 
     running coroutines blocks the primary
     draw thread. The answer is, blocking coroutines are useful when the work 

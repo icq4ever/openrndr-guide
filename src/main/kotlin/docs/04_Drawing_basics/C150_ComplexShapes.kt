@@ -18,33 +18,37 @@ import kotlin.math.sin
 fun main() {
     @Text 
     """
-    # Complex shapes
+    # 복잡한 모양 
     
-    OPENRNDR offers a lot of tools for the creation and drawing of two dimensional shapes.
+    OPENRNDR은 2차원 모양(shape)을 생성하고 그리는 다양한 도구를 제공합니다.
 
     ## Shapes
     
-    OPENRNDR uses `Shape` to represent planar shapes of which the contours are described using piece-wise bezier curves.
+    OPENRNDR은 `Shape`을 사용하여 베지어(bezier) 커브들로 구성된 윤곽을 나타내는 평면 도형을 표현합니다.
     
-    A `Shape` is composed of one or multiple `ShapeContour` instances. A `ShapeContour` is composed of multiple `Segment` instances, describing a bezier curve each.
+    `Shape`은 하나 혹은 그 이상의 `ShapeContour` 인스턴스로 구성되어있습니다.
+    `ShapeContour`은 여러개의 `Segment` 인스턴스로 구성되어있습니다. 각 `Segment`는 베지어(bezier)커브를 나타냅니다.
 
-    ## Shape and ShapeContour builders
+    ## Shape과 ShapeContour 빌더
     
-    The `ContourBuilder` class offers a simple way of producing complex two dimensional shapes. `ContourBuilder` employs a vocabulary that is familiar to those who have used SVG.
+    `ContourBuilder` 클래스는 복잡한 2차원 도형을 간단하게 표현하는 방법을 제공합니다.
+    `ContourBuilder`는 SVG를 사용해본 분들에게 친숙한 용어를 사용합니다.
     
-    * `moveTo(position)` move the cursor to the given position
-    * `lineTo(position)` insert a line contour starting from the cursor, ending at the given position
-    * `moveOrLineTo(position)` move the cursor if no cursor was previously set or draw a line
-    * `curveTo(control, position)` insert a quadratic bezier curve starting from the cursor, ending at position
-    * `curveTo(controlA, controlB, position)` insert a cubic bezier curve starting from the cursor, ending at position
+    * `moveTo(position)` 커서를 지정한 위치로 이동시킵니다.
+    * `lineTo(position)` 커서에서  주어진 위치까지 선을 그립니다.
+    * `moveOrLineTo(position)` 이전에 지정된 커서가 없다면 커서를 이동시키고, 아니라면 선을 그립니다.
+    * `curveTo(control, position)` 커서에서 지정된 위치까지 quadratic bezier 커브를 그립니다.
+    * `curveTo(controlA, controlB, position)` 커서에서 지정된 위치까지 quadratic bezier 커브를 그립니다. 
     * `continueTo(position)` inside a quadratic bezier curve starting from the cursor and reflecting the tangent of the last control
-    * `continueTo(controlB, position)` insert a cubic spline
-    * `arcTo(radiusX, radiusY, largeAngle, sweepFlag, position)`
-    * `close()` close the contour
-    * `cursor` a `Vector2` instance representing the current position
-    * `anchor` a `Vector2` instance representing the current anchor
+    * `continueTo(controlB, position)` 커서에서 지정한 위치까지 cubic spline을 그립니다.
+    * `arcTo(radiusX, radiusY, largeAngle, sweepFlag, position)` 호를 그립니다.
+    * `close()` 윤곽을 닫습니다 (close the contour)
+    * `cursor` 는 현재 위치를 `Vector2` 인스턴스로 표현합니다.
+    * `anchor` 는 현재 앵커를 `Vector2` 인스턴스로 표현합니다.
     
     Let's create a simple `Contour` and draw it. The following program shows how to use the contour builder to create a triangular contour.
+    간단한 `contour`(윤곽)를 그려봅시다.
+    아래의 코드는 contour 빌더를 사용해 삼각형을 그리는지 보여줍니다.
     """
 
     @Media.Image "../media/shapes-001.jpg"
