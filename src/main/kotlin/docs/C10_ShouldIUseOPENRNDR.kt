@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Should I use OPENRNDR?")
-@file:ParentTitle("What is OPENRNDR?")
+@file:Title("OPENRNDR를 사용해야 할까요?")
+@file:ParentTitle("OPENRNDR이 뭐죠?")
 @file:Order("10")
 @file:URL("/shouldIUseOPENRNDR")
 
@@ -11,7 +11,7 @@ import org.openrndr.dokgen.annotations.*
 fun main() {
     @Text
     """
-    # OPENRNDR를 사용해야 할까요??
+    # OPENRNDR를 사용해야 할까요?
     
     그럼요!
     

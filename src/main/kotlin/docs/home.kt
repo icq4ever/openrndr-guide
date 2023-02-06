@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("What is OPENRNDR?")
+@file:Title("OPENRNDR이 뭐죠?")
 @file:Order("0")
 @file:URL("/index")
 
@@ -14,7 +14,7 @@ import kotlin.math.cos
 fun main() {
     @Text
     """
-    # What is OPENRNDR?
+    # OPENRNDR이 뭐죠?
 
     OPENRNDR is an application framework and a library for creative coding written in [Kotlin](https://kotlinlang.org).
 

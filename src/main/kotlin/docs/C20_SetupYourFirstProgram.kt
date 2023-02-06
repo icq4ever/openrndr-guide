@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Set up your first program")
-@file:ParentTitle("What is OPENRNDR?")
+@file:Title("첫 프로그램을 셋업해봅시다")
+@file:ParentTitle("OPENRNDR이 뭐죠?")
 @file:Order("20")
 @file:URL("/setUpYourFirstProgram")
 
