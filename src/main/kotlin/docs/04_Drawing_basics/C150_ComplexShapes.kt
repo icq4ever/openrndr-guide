@@ -80,8 +80,8 @@ fun main() {
 
     @Text 
     """
-    Now let's create a `Shape` using the _shape builder_. The shape is created using two contours, one for
-    _outline_ of the shape, and one for the _hole_ in the shape
+    자 이제 _shape builder_`를 사용하여 `Shape`를 만들어봅시다. 
+    Shape은 두개의 contour를 사용하는데, 하나는 Shape의 _외곽선_을, 다른 하나는 Shape의 _구멍_을 그리는데 사용될 것입니다.
     """
 
     @Media.Image "../media/shapes-002.jpg"
@@ -121,21 +121,21 @@ fun main() {
 
     @Text 
     """
-    ## Shapes and contours from primitives
+    ## 기초 도형에서 Shape 과 conour 가져오기
     
-    Not all shapes need to be created using the builders. 
-    Some of the OPENRNDR primitives have `.shape` and
-    `.contour` properties that help in creating shapes quickly.
-
+    반드시 빌더를 이용하여 shape를 만들 필요는 없습니다.
+    몇몇 OPENRNDR 기초도형(premitives)dms `.shape`과 `.contour` 속성을 가지고 있어 손쉽게 shape을 만들수 있습니다.
+    
+    
     * `LineSegment.contour` and `LineSegment.shape`
     * `Rectangle.contour` and `Rectangle.shape`
     * `Circle.contour` and `Circle.shape`
     
-    ## Shape Boolean-operations
+    ## Shape의 boolean 연산
     
-    Boolean-operations can be performed on shapes using the `compound {}` builder. 
-    There are three kinds of compounds: _union_, _difference_ and _intersection_, 
-    all three of them are shown in the example below.
+    대상 shape의 `compound{}` 빌더를 사용하여 boolean 연산을 수행할 수 있습니다.
+    _union_, _difference_, _intersection_ 의 compounds 종류가 있습니다.
+    위 모든 사용법은 아래 예제에서 볼 수 있습니다.
     """
 
     @Media.Image "../media/shapes-003.jpg"
@@ -184,10 +184,8 @@ fun main() {
 
     @Text 
     """
-    The _compound builder_ is actually a bit more clever than what the 
-    previous example demonstrated because it can actually work with an 
-    entire tree of compounds. Demonstrated below is the _union_ of 
-    two _intersections_.
+    아래 예제에서의 _compound builder_는 위 예제보다 더 효율적입니다, compounds의 트리로 동작하고 있기 떄문입니다.
+    아래는 두 _intersections_의 _union_을 보여줍니다.
     """
 
     @Media.Image "../media/shapes-004.jpg"
@@ -223,9 +221,9 @@ fun main() {
 
     @Text 
     """
-    ## Cutting contours
+    ## contour 잘라내기 
     
-    A contour be cut into a shorter contour using `ShapeContour.sub()`.
+    contour는 `ShapeContour.sub()`를 사용하여 일부분으로 자를 수 있습니다.
     """
 
     @Media.Video "../media/shapes-005.mp4"
@@ -258,11 +256,10 @@ fun main() {
 
     @Text 
     """
-    ## Placing points on contours
+    ## contour 위에 point를 위치시키기
     
-    Call `ShapeContour.position()` to sample one specific location 
-    or `ShapeContour.equidistantPositions()` to sample multiple equidistant 
-    locations on a contour.  
+    `ShapeContour.position()`를 사용해 하나의 특정 위치를 얻어오거나, 
+    `ShapeContour.equidistantPositions()`을 사용하여 여러 등거리(equidistant) 위치를 contour에서 얻어올 수 있습니다.
     """
 
     @Media.Video "../media/shapes-006.mp4"
@@ -296,10 +293,10 @@ fun main() {
 
     @Text 
     """
-    ## Offsetting contours
+    ## contour 오프셋 
     
-    The function `ShapeContour.offset` can be used to create an offset version 
-    of a contour. """
+    `ShapeContour.offset`함수를 사용하여 기존 contour의 offset된 버전의 contour를 생성할 수 있습니다.
+    """
 
     @Media.Video "../media/shapes-101.mp4"
 
@@ -329,9 +326,8 @@ fun main() {
 
     @Text 
     """
-    `ShapeContour.offset` can also be used to offset curved contours. 
-    The following demonstration shows a single cubic bezier offset at multiple 
-    distances.
+    `ShapeContour.offset`은 또한 curved contour에도 사용할 수 있습니다.
+    아래는 하나의 cubic bezier에 여러 offset을 적용한 예제입니다.
     """
 
     @Media.Video "../media/shapes-100.mp4"
