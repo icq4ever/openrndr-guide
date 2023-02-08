@@ -21,10 +21,10 @@ import org.openrndr.shape.*
 
 fun main() {
     @Text """
-    # 3D graphics
+    # 3D 그래픽스
     
-    Draw a rotating 3D box with a minimal `shadeStyle` to simulate lighting.
-    Lower level approach.
+    조명을 시뮬레이션하기 위해 아주 간단한 `shadeStyle`를 적용하여 회전하는 3D 박스를 그려봅시다.
+    저수준의 접근 방식을 사용했습니다.
     """
 
     @Code
@@ -57,9 +57,8 @@ fun main() {
     }
 
     @Text """    
-    Draw a rotating 3D box with a minimal `shadeStyle` to simulate lighting.
-    Uses `Orbital` to simplify creating a 3D camera which can be 
-    controlled with the mouse and the keyboard.
+    조명을 시뮬레이션하기 위해 아주 간단한 `shadeStyle`를 적용하여 회전하는 3D 박스를 그려봅시다.
+    이번에는 `Orbital`를 사용하여 마우스와 키보드로 조절이 가능한 간단한 3D카메라를 만들어 사용했습니다.
     """
 
     @Code
@@ -88,7 +87,7 @@ fun main() {
     }
 
     @Text """    
-    Draw ten 2D rectangles in 3D space. 
+    3차원 공간에 10개의 2D 사각형을 그려봅시다.
     """
 
     @Code
@@ -113,12 +112,12 @@ fun main() {
         }
     }
 
-    @Text """    
-    2D drawing operations like `drawer.rectangle`, `drawer.contour`, etc. 
-    can have depth related occlusion issues, as they are not designed for 3D usage.
-    To avoid such issues you can create your own vertex buffers and meshes.
-
-    ## See also
+    @Text """
+    `drawer.rectangle`이나 `drawer.contour`와 2D 그래픽을  3D에 그려내면, 
+    3D용으로 디자인되지 않았으므로 심도와 관련하여 폐색 문제가 발생할 수 있습니다.
+    따라서 이런 문제를 방지하기 위해 직접 버텍스 버퍼와 메쉬를 만들어 이런 문제를 해결할 수 있습니다.
+    
+    ## 추가 자료
     
     - [orx-camera](https://github.com/openrndr/orx/tree/master/orx-camera)
     - [orx-dnk3](https://github.com/openrndr/orx/tree/master/orx-jvm/orx-dnk3)

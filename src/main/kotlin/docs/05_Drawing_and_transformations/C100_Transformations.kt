@@ -6,26 +6,26 @@
 
 package docs.`05_Drawing_and_transformations`
 
+import kotlin.math.cos
 import org.openrndr.application
 import org.openrndr.color.ColorRGBa
 import org.openrndr.dokgen.annotations.*
-import kotlin.math.cos
 
 fun main() {
 
-    @Text 
+    @Text
     """
-    # Transformations
+    # 좌표변환
 
-    This section covers the topic of placing items on the screen.
+    이 섹션에서는 아이템을 화면상에 위치시키는 내용을 다룹니다.
     
-    ## Basic transformation use
+    ## 기본적인 좌표변환
     
     ### Translation
     
-    Translation moves points in space with an offset.
+    Translation은 한 지점을 offset만큼 이동시키는 것입니다.
 
-    In the following example we use `Drawer.translate` to move a single rectangle over the screen.
+    아래의 예제에서는 사각형을 화면에서 이동시키기 위해 `Drawer.trasnalte`을 사용하고 있습니다.
     """
 
     @Media.Video "../media/transformations-001.mp4"
@@ -49,11 +49,10 @@ fun main() {
         }
     }
 
-    @Text 
+    @Text
     """
-    translations (and transformations in general) can be stacked 
-    on top of each-other. For example we can express a horizontal and a vertical 
-    motion as two separate translations
+    좌표변환(translations) (일반적으로 transformations 라고도 불리웁니다)은 누적됩니다.
+    예를 들어 가로와 세로 방향으로 나눠 좌표면환을 할 수 있습니다.
     """
 
     @Media.Video "../media/transformations-002.mp4"
@@ -82,13 +81,15 @@ fun main() {
         }
     }
 
-    @Text 
+    @Text
     """
-    ### Rotations
+    ### 회전
     
-    Rotating transformations are performed using `Drawer.rotate()`. 
-    The rotation is applied by rotating points around the origin of the 
-    coordinate system: (0, 0), which lies in the top-left corner of the window.
+    회전 변환은 `Drawser.rotate()`를 사용합니다.
+    회전은 좌표계의 원점인 (0, 0)을 중심으로 적용되는데, 이 원점은 윈도우의 좌측 상단을 의미합니다.
+
+    첫번째 예제에서는 사각형을 이 원점에 두었지만, 이후에는 화면의 중심으로 옮겼습니다. 
+    `
 
     In the first rotation example we rotate a rectangle that is placed around the origin but later translated to the center
     of the screen. Here we notice something that may be counter-intuitive at first: the transformations are easiest read
@@ -120,7 +121,7 @@ fun main() {
         }
     }
 
-    @Text 
+    @Text
     """
     ### Scaling
     
@@ -154,8 +155,7 @@ fun main() {
         }
     }
 
-    @Text 
-    """
+    @Text """
     ### Combining transformations
     """
 
@@ -181,7 +181,8 @@ fun main() {
                 // -- rectangle around the origin
                 drawer.rectangle(-50.0, -50.0, 100.0, 100.0)
 
-                // -- draw a second rectangle, sharing the rotation of the first rectangle but with an offset
+                // -- draw a second rectangle, sharing the rotation of the first rectangle but with
+                // an offset
                 drawer.translate(150.0, 0.0)
                 drawer.rectangle(-50.0, -50.0, 100.0, 100.0)
             }
@@ -210,7 +211,8 @@ fun main() {
                 // -- rectangle around the origin
                 drawer.rectangle(-50.0, -50.0, 100.0, 100.0)
 
-                // -- draw a second rectangle, sharing the rotation of the first rectangle but with an offset
+                // -- draw a second rectangle, sharing the rotation of the first rectangle but with
+                // an offset
                 drawer.translate(150.0, 0.0)
                 drawer.rotate(seconds * 15.0)
                 drawer.rectangle(-50.0, -50.0, 100.0, 100.00)
@@ -218,7 +220,7 @@ fun main() {
         }
     }
 
-    @Text 
+    @Text
     """
     ## Transform pipeline
 
