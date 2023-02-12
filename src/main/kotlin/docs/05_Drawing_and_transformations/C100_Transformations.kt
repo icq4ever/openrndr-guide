@@ -222,8 +222,9 @@ fun main() {
 
     @Text
     """
-    ## Transform pipeline
+    ## Transform 파이프라인
 
+    OPENRNDR의 `Drawer`는 모델-뷰-프로젝션 transform 파이프라인을 통해 구동됩니다. 즉 화면 위치를 결정하기 위해 세가지의 다른 좌표변환이 적용됩니다.
     OPENRNDR's `Drawer` is build around model-view-projection transform pipeline. That means that three different transformations are applied to determine
     the screen position.
     
@@ -233,9 +234,9 @@ fun main() {
     `view`          | view transform
     `projection`    | projection transform
     
-    Which matrices are affected by which `Drawer` operations?
+    어떤 매트릭스 속성이 `Drawer`의 계산(메소드)에 의해 영향을 받을가요 ?
     
-    operation            | matrix property
+    operation            | 매트릭스 속성
     ---------------------|----------------
     `fun rotate(…)`      | `model`
     `fun translate(…)`   | `model`
@@ -246,11 +247,11 @@ fun main() {
     `fun perspective(…)` | `projection`
     
     
-    ## Projection matrix
+    ## projection matrix
     
-    The default projection transformation is set to an orthographic projection using `ortho()`. The origin is in the upper-left corner; positive y points down, positive x points right on the screen.
+    디폴트 transformation으로는 `ortho()`를 사용한 orthographic 프로젝션이 사용됩니다. 기준점은 좌측-상단 코너입니다. y좌표는 아래로, x좌표가 우측으로 갈수록 증가합니다.
     
-    ### Perspective projections
+    ### Perspective 프로젝션
     
     ```kotlin
     override fun draw() {
@@ -260,8 +261,9 @@ fun main() {
     
     ## Transforms
     
-    In OPENRNDR transforms are represented by `Matrix44` instances.
+    OPENRNDR transforms은 `Matrix44` 인스턴스로 표현됩니다.
     
+    OPENRNDR은 `Matrix44`를 생성하기 위한 툴을 제공합니다.
     OPENRNDR offers tools to construct `Matrix44`
     
     ### Transform builder
