@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Vectors")
-@file:ParentTitle("Drawing and transformations")
+@file:ParentTitle("드로잉과 좌표계")
 @file:Order("110")
 @file:URL("drawingAndTransformations/vectors")
 

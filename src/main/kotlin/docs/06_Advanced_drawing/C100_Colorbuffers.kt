@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Color buffers")
-@file:ParentTitle("Advanced drawing")
+@file:ParentTitle("고급 드로잉")
 @file:Order("100")
 @file:URL("advancedDrawing/colorbuffers")
 

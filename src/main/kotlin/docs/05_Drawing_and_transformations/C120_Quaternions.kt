@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Quaternions")
-@file:ParentTitle("Drawing and transformations")
+@file:ParentTitle("드로잉과 좌표계")
 @file:Order("120")
 @file:URL("drawingAndTransformations/quaternions")
 

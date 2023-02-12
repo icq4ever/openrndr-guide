@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Custom rendering")
-@file:ParentTitle("Advanced drawing")
+@file:ParentTitle("고급 드로잉")
 @file:Order("150")
 @file:URL("advancedDrawing/customRendering")
 

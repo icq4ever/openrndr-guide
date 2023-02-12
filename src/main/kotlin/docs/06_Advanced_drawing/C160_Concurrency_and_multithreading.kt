@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Concurrency and multithreading")
-@file:ParentTitle("Advanced drawing")
+@file:ParentTitle("고급 드로잉")
 @file:Order("160")
 @file:URL("advancedDrawing/concurrencyAndMultithreading")
 
@@ -78,9 +78,9 @@ fun main() {
     (from a thread pool) such that it does not block the primary draw thread. 
     By using `.join()` on the inner coroutine
     we wait for it to complete, waiting is non-blocking (thanks to coroutine 
-    magic!). Once the join operation completes 
-    we can write the results to a graphics resource on the primary draw thread.
-     """
+    magic!). Once the join operation completes d
+    we can write the results to a graphics resource on the primary draw threaddlkfskdfj ldskjf;slkdjf 니아ㅓㄹㅁ;니ㅏ얼;lkdjsf;lakdsjf;lk;ㅣ아ㅓㄹ;밍나ㅓㄹ;;laskdjf;laskdjf
+     """vi     
 
     @Code
     application {
