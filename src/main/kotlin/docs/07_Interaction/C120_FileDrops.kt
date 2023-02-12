@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("File Drops")
-@file:ParentTitle("Interaction")
+@file:ParentTitle("인터랙션")
 @file:Order("120")
 @file:URL("interaction/fileDrops")
 

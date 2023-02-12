@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Advanced drawing")
+@file:Title("고급 드로잉")
 @file:Order("1060")
 @file:URL("advancedDrawing/index")
 
@@ -10,7 +10,7 @@ import org.openrndr.dokgen.annotations.*
 fun main() {
     @Text
     """
-    # Advanced drawing
+    # 고급 드로잉
     """.trimIndent()
 }
 

@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Writing extensions")
-@file:ParentTitle("Advanced topics")
+@file:ParentTitle("고급 주제")
 @file:Order("130")
 @file:URL("advancedTopics/writingExtensions")
 

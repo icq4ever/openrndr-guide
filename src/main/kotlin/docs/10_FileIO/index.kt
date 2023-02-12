@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("File Input / Output")
+@file:Title("파일 입출력")
 @file:Order("1095")
 @file:URL("fileIO/index")
 
@@ -20,7 +20,7 @@ fun main() {
 
     @Text
     """
-    # File Input / Output
+    # 파일 입출력
     
     ## Loading files
     

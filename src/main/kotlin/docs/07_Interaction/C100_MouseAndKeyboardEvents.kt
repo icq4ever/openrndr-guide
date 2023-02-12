@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Mouse And Keyboard Events")
-@file:ParentTitle("Interaction")
+@file:ParentTitle("인터랙션")
 @file:Order("100")
 @file:URL("interaction/mouseAndKeyboardEvents")
 

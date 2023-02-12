@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("User Interfaces")
-@file:ParentTitle("Interaction")
+@file:ParentTitle("인터랙션")
 @file:Order("140")
 @file:URL("interaction/userInterfaces")
 

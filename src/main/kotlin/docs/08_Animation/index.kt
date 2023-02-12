@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Animation")
+@file:Title("애니메이션")
 @file:Order("1080")
 @file:URL("animation/index")
 
@@ -10,6 +10,6 @@ import org.openrndr.dokgen.annotations.*
 fun main() {
     @Text
     """
-    # Animation
+    # 애니메이션
     """.trimIndent()
 }

@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Low-level drawing")
-@file:ParentTitle("Advanced topics")
+@file:ParentTitle("고급 주제")
 @file:Order("150")
 @file:URL("advancedTopics/lowLevelDrawing")
 

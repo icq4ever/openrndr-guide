@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Headless applications")
-@file:ParentTitle("Advanced topics")
+@file:ParentTitle("고급 주제")
 @file:Order("140")
 @file:URL("advancedTopics/headlessApplications")
 

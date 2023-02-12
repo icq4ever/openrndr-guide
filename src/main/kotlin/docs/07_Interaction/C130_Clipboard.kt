@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Clipboard")
-@file:ParentTitle("Interaction")
+@file:ParentTitle("인터랙션")
 @file:Order("130")
 @file:URL("interaction/clipboard")
 

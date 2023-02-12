@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Playing videos")
-@file:ParentTitle("Videos")
+@file:ParentTitle("비디오")
 @file:Order("100")
 @file:URL("videos/playingVideos")
 

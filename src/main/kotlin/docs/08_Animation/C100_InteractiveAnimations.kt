@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Interactive animations")
-@file:ParentTitle("Animation")
+@file:ParentTitle("애니메이션")
 @file:Order("100")
 @file:URL("animation/interactiveAnimations")
 

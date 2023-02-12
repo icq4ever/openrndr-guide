@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Integer color buffers")
-@file:ParentTitle("Advanced topics")
+@file:ParentTitle("고급 주제")
 @file:Order("155")
 @file:URL("advancedTopics/integerColorBuffers")
 

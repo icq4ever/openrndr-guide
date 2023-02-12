@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Videos")
+@file:Title("비디오")
 @file:Order("1090")
 @file:URL("videos/index")
 
@@ -10,6 +10,6 @@ import org.openrndr.dokgen.annotations.*
 fun main() {
     @Text
     """
-    # Videos
+    # 비디오
     """.trimIndent()
 }
