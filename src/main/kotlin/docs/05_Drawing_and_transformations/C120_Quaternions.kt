@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Quaternions")
+@file:Title("쿼터니언")
 @file:ParentTitle("드로잉과 좌표계")
 @file:Order("120")
 @file:URL("drawingAndTransformations/quaternions")
@@ -15,11 +15,11 @@ import org.openrndr.math.slerp
 fun main() {
     @Text 
     """
-    # Quaternions
+    # 쿼터니언(Quaternions)
     
-    Quaternions represent rotation through an extension of complex numbers. A full explanation of quaternions and their intrinsics is out of this document's scope, in this section however enough information is provided to use quaternion's effectively as a tool.
+    쿼터니언은 회전을 복소수의 확장을 사용하여 표현하는 방법입니다. 쿼터니언및 쿼터니언이 내장하고 있는 함수에 대한 모든 설명은 이문서의 범위를 벗어나므로, 이 섹션에서는 쿼터니언을 도구로 효과적으로 사용할 수 있는 정보들을 제공하려 합니다.
     
-    In practice quaternions are rarely constructed directly as it is fairly difficult to get an intuition for its argument values.
+    실제로 쿼터니언은 인수의 값을 직관적으로 파악하기가 상당히 어렵기 때문에, 직접 생성할 일은 거의 없습니다.
     """
 
     @Code.Block
@@ -29,9 +29,8 @@ fun main() {
 
     @Text
     """
-    Instead quaternions are created from Euler-rotation angles and concatenated 
-    in quaternion space. Working in quaternion domains warrants consistent 
-    rotations and avoids gimbal locks.
+
+    대신에, 쿼터니언은 오일러 회전각에서 생성되어, 쿼터니언 공간에 연결됩니다. 쿼터니언 도메인에서의 작업은 일관된 회전이 보장되며, 짐벌락을 피할 수 있습니다.
     """
 
     run {
@@ -53,8 +52,7 @@ fun main() {
     """
     ## Slerp
 
-    Spherical linear interpolation, or colloquially "slerping" solves the problem of interpolating or blending
-    between rotations.
+    구형 선형 보간(Spherical linear interpolation) 또는 "slerping"는 회전 사이의 보간/혼합 문제를 해결해줍니다.
     """
 
     run {
@@ -74,11 +72,10 @@ fun main() {
 
     @Text
     """
-    ## Quaternion to matrix
+    ## 쿼터니언을 행렬로
 
-    Naturally quaternions can be converted to matrices. 
-    Quaternions have a `matrix` property that holds a `Matrix44` representation 
-    of the orientation represented by the Quaternion.
+    당연히 쿼터니언은 행렬로 변환될 수 있습니다.
+    쿼터니언은 쿼터니언이 나타내는 방향을 `matrix44`으로 표현하는 `matrix`속성을 갖고 있습니다.
     """
 
     application {

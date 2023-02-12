@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Transformations")
+@file:Title("좌표변환")
 @file:ParentTitle("드로잉과 좌표계")
 @file:Order("100")
 @file:URL("drawingAndTransformations/transformations")
@@ -88,12 +88,9 @@ fun main() {
     회전 변환은 `Drawser.rotate()`를 사용합니다.
     회전은 좌표계의 원점인 (0, 0)을 중심으로 적용되는데, 이 원점은 윈도우의 좌측 상단을 의미합니다.
 
-    첫번째 예제에서는 사각형을 이 원점에 두었지만, 이후에는 화면의 중심으로 옮겼습니다. 
-    `
+    첫번째 예제에서는 사각형을 이 원점에 두었지만, 이후에는 화면의 으로 변환되는 사각형을 회전시킵니다.
+    여기서 직관적이지 않다는 점을 발견할 수 있습니다. 변환은 아래에서 위로 읽어야 쉽게 이해할 수 있습니다. 먼저 `rotate`가 적용된 다음, `translate`만 적용됩니다.
 
-    In the first rotation example we rotate a rectangle that is placed around the origin but later translated to the center
-    of the screen. Here we notice something that may be counter-intuitive at first: the transformations are easiest read
-    from bottom to top: first `rotate` is applied and only then `translate`.
     """
 
     @Media.Video "../media/transformations-003.mp4"
@@ -125,9 +122,8 @@ fun main() {
     """
     ### Scaling
     
-    Scaling transformations are performed using `Drawer.scale()`. 
-    Also scaling is applied around the origin of
-    the coordinate system: (0, 0).
+    Scaling 변환은 `Drawer.scale()`를 사용하여 수행됩니다.
+    scaling 역시 좌표계 시스템의 원점:(0, 0) 을 기준으로 적용됩니다.
     """
 
     @Media.Video "../media/transformations-004.mp4"
@@ -156,7 +152,7 @@ fun main() {
     }
 
     @Text """
-    ### Combining transformations
+    ### 좌표계 변환 조합하기
     """
 
     @Media.Video "../media/transformations-005.mp4"
@@ -262,18 +258,19 @@ fun main() {
     ## Transforms
     
     OPENRNDR transforms은 `Matrix44` 인스턴스로 표현됩니다.
+
+    OPENRNDR은 `Matrix44` 생성 툴을 제공합니다.
     
-    OPENRNDR은 `Matrix44`를 생성하기 위한 툴을 제공합니다.
-    OPENRNDR offers tools to construct `Matrix44`
+    ### Transform 빌더
     
-    ### Transform builder
-    
-    Relevant APIs
+    관련 API
     ```
     Matrix44
     transform {}
     ```
     
+    아래 코드에서, `Matrix44`인스턴스는 `transform{}` 빌더를 이용해 생성되는 과정을 보여줍니다. 
+    주의해야할 점은, 순서가 아래에서 위로 수행된다는 점입니다.
     In the snippet below a `Matrix44` instance is constructed using the `transform {}` builder. Note that the application order is from bottom to top.
     
     ```kotlin
@@ -285,7 +282,7 @@ fun main() {
     }
     ```
     
-    This is equivalent to the following:
+    이는 아래의 코드와 동일합니다 :
     ```kotlin
     drawer.rotate(32.0)
     drawer.rotate(Vector3(1.0, 1.0, 0.0).normalized, 43.0)
@@ -293,7 +290,7 @@ fun main() {
     drawer.scale(2.0)
     ```
     
-    ## Applying transforms to vectors
+    ## vector를 이용해 좌표변환 적용하기
     
     ```kotlin
         val x = Vector3(1.0, 2.0, 3.0, 1.0)
