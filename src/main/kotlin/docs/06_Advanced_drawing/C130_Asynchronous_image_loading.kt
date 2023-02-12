@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Asynchronous image loading")
-@file:ParentTitle("고급 드로잉)
+@file:ParentTitle("고급 드로잉")
 @file:Order("130")
 @file:URL("advancedDrawing/asynchronousImageLoading")
 
