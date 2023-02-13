@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Filters and post processing")
+@file:Title("필터 및 후처리")
 @file:ParentTitle("고급 드로잉")
 @file:Order("110")
 @file:URL("advancedDrawing/filtersAndPostProcessing")
@@ -15,14 +15,13 @@ import kotlin.math.sin
 fun main() {
     @Text 
     """
-    # Filters and Post-processing
+    # 필터 및 후처리
     
-    Since OPENRNDR has extensive support for rendering to off-screen buffers it is easy to apply effects and filters
-    to the off-screen buffers.
+    OPENRNDR은 off-screen 버퍼에 대한 렌더링을 광범위하게 지원하므로, off-screen 버퍼에 대해 효과와 필터를 쉽게 적용할 수 있습니다.
     
-    ## Basic usage
+    ## 기본 사용법
     
-    To demonstrate the ease of using filters we show an example of applying a blur filter to a drawing on a render target.
+    필터 적용이 얼마나 쉬운지 보여주기 위하여, 아래의 예제에서는 render target에 blur 필터를 적용하여 그리는 것을 보여줍니다.
     """
 
     @Media.Video "../media/filters-001.mp4"

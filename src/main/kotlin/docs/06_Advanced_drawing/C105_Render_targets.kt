@@ -14,23 +14,22 @@ import org.openrndr.draw.*
 fun main() {
     @Text 
     """
-    # Render targets and color buffers
+    # Render target과 색상 버퍼
     
-    A `RenderTarget` specifies a place to draw to. A `RenderTarget` has two 
-    kind of buffer attachments:
-    `ColorBuffer` attachments and `DepthBuffer` attachments. 
-    At least a single `ColorBuffer` attachment is needed to be able to draw 
-    on a `RenderTarget`.
+    `RenderTarget`은 어디에 그릴것읜지를 명시합니다. `RengerTarget`에는 두 종류의 버퍼 첨부가 있습니다.
 
-    A `ColorBuffer` is a buffer that can hold up to 4 channel color. 
-    A `ColorBuffer` can hold 8 bit integer, 16 bit float or 32 bit float channels.
+    `ColorBuffer` 첨부와 `DepthBuffer`첨부가 그것입니다.
 
-    A `DepthBuffer` is a buffer that can hold depth and stencil values.
+    `RenderTarget`에 무언가를 그리기 위해서는 최소한 하나의 `ColorBuffer`가 필요합니다.
+
+    `ColorBuffer`는 4채널 색상을 갖고있는 버퍼입니다.
+    `ColorBuffer`는 8비트 int, 혹은 16/32비트 float 채널을 가질 수 있습니다.
     
-    ## Creating a render target
+    `DepthBuffe`는 깊이와 스텐실 값을 가지는 버퍼입니다.
+
+    ## render target 생성하기
     
-    The advised method of creating `RenderTarget` instances is to use the 
-    `renderTarget {}` builder.
+    `RenderTarget` 인스턴스를 생성하기 위해 권장하는 방법은 `renderTarget{}` 빌더를 사용하는 것입니다.
     """
 
     @Code.Block
@@ -40,10 +39,8 @@ fun main() {
 
     @Text 
     """
-    This creates a render target, but the render target does not have 
-    attachments that can hold the actual
-    image data. In the following snippet a render target with a single color 
-    buffer attachment is created using the builder.
+    위 코드는 render target를 생성하지만, 생성한 render target은 실제 이미지 데이터를 갖고 있는 첨부자료를 갖고 있지 않습니다.
+    아래의 코드는 하나의 color buffer 첨부와 함께 render target을, 빌더를 사용하여 생성하고 있습니다.
     """
 
     @Code.Block
@@ -55,22 +52,22 @@ fun main() {
 
     @Text 
     """
-    ## Drawing on a render target
+    ## render target에 그리기
+
+    아래의 코드는 off-screen 버퍼에 이미지를 그린 뒤, offscreen 버퍼를 화면에 그려내는 방법을 보여주고 있습니다.
     
-    In the following code snippet you will find an example showing how to 
-    draw on an off-screen buffer followed by drawing that offscreen buffer 
-    on screen.
     """
 
     @Code
     application {
         program {
-            // -- build a render target with a single color buffer attachment
+            // -- color buffer 를 포함하여 render target을 빌드합니다.
             val rt = renderTarget(width, height) {
                 colorBuffer()
             }
 
             extend {
+                // 컬러버퍼를 대상으로 그립니다.
                 drawer.isolatedWithTarget(rt) {
                     drawer.clear(ColorRGBa.BLACK)
                     drawer.fill = ColorRGBa.WHITE
@@ -78,7 +75,7 @@ fun main() {
                     drawer.rectangle(40.0, 40.0, 80.0, 80.0)
                 }
 
-                // draw the backing color buffer to the screen
+                // 컬러버퍼를 화면에 그립니다.
                 drawer.image(rt.colorBuffer(0))
             }
         }
@@ -86,12 +83,10 @@ fun main() {
 
     @Text 
     """
-    ## Render targets and projection transformations
+    ## render target과 프로젝션 변환
     
-    Keep in mind that projection transform has to be set to fit the render 
-    target, this becomes apparent specifically when the used render target 
-    has dimensions that differ from those of the window. In case of orthographic
-    (2D) projections one can use the following:
+    프로젝션 변환은 반드시 render target에 맞게 설정되어야 함을 명심하시기 바랍니다. 
+    이는 특히나 설정된 render target과 윈도우의 크기가 다를때 명확해집니다. 직교(2D) 프로젝션의 경우는 다음과 같이 사용할 수 있습니다:
     """
 
     @Code
@@ -122,11 +117,10 @@ fun main() {
 
     @Text 
     """
-    ## Compositing using render targets and alpha channels 
+    ## render target과 알파 채널 조합하기
     
-    OPENRNDR allows for compositing using `RenderTargets` through the use of 
-    transparency encoded in alpha channels. The following code snippet uses 
-    two `RenderTarget` instances and clears them using `ColorRGBa.TRANSPARENT`.
+    OPENRNDR은 알파 채널에 인코딩된 투명도와 `RenderTargets`를 사용하여 합성할 수 있습니다.
+    아래의 코드는 두 `RenderTarget` 인스턴스를 `ColorRGBa.TRANSPARENT`를 사용하여 초기화 하는 것을 보여줍니다.
     """
 
     @Code
@@ -160,10 +154,9 @@ fun main() {
 
     @Text 
     """
-    ## Creating high precision floating point render targets
+    ## 고정밀 부동소수점 render target 만들기
     
-    The default color buffer format is unsigned 8 bit RGBa. There is support 
-    for floating point render targets.
+    색상 버퍼의 기본 포맷은 unsigned 8비트 RGBa입니다. 하지만 부동소수점 또한 지원합니다.
     """
 
     @Code.Block
@@ -176,12 +169,10 @@ fun main() {
 
     @Text 
     """
-    ## Multi-sample anti-aliasing
+    ## 멀티 샘플링과 안티앨리어싱
     
-    Render targets can be configured to use multi-sample anti-aliasing. 
-    All color and depth buffers that are added 
-    in the `renderTarget {}` builder will be created with the same multi 
-    sample configuration.
+    render target은 멀티샘플링과 안티앨리어싱을 사용할 수 있습니다.
+    `renderTarget{}` 빌더 내에 추가되는 모든 색상 및 깊이 버퍼는 동일한 멀티샘플링 설정이 적용됩니다.
     """
 
     @Code.Block
@@ -195,9 +186,7 @@ fun main() {
 
     @Text 
     """
-    The color buffers that are attached to a multi-sampled render target 
-    cannot be drawn directly. In order to use the color buffer it has 
-    to be resolved first.
+    멀티샘플링된 render target에 첨부된 색상버퍼는 바로 그려낼 수 없습니다. 사용하기 전 컬러버퍼는 설정 처리를 먼저 해주어야 합니다.
     """
 
     @Code
@@ -235,16 +224,14 @@ fun main() {
 
     @Text
     """
-    ## Depth Buffer
-        
-    A depth buffer is required to be able to draw `Shape` and `ShapeContour` 
-    elements on a render target. Without a depth buffer the program will
-    fail to run and an error message will remind you of this requirement.
+    ## 깊이 버퍼
+     
+    깊이(심도) 버퍼는 `Shape`과 `ShapeContour`요소들을 render target에 그려낼때 필요합니다. 
+    깊이 버퍼가 없다면, 실행에 실패하며 에러 메시지로 필요한 내용을 알려줍니다.
     
-    When drawing 3D graphics a depth buffer is required so elements near the
-    camera are drawn in front of elements farther away from it.
+    3D 그래픽을 그려낼떄 역시 깊이버퍼가 필요합니다. 이를 사용하여 카메라 근처의 요소가 멀리 있는 요소 앞에 그려지게 됩니다.
     
-    ## Clearing buffers
+    ## 버퍼 초기화하기
        
     """
 
@@ -256,17 +243,17 @@ fun main() {
 
         @Code.Block
         run {
-            // clear the color buffer
+            // 색상 버퍼를 초기화합니다.
             rt.clearColor(0, ColorRGBa.TRANSPARENT)
 
-            // clear the depth buffer
+            // 심도 버퍼를 초기화합니다.
             rt.clearDepth()
         }
     }
 
     @Text 
     """
-    ## Named attachments
+    ## 첨부데이터에 이름 붙이기
     """
 
     @Code.Block
